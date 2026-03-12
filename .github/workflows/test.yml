@@ -1,0 +1,104 @@
+name: Playwright BDD Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: "Browser to use"
+        required: false
+        default: "chromium"
+        type: choice
+        options: [chromium, firefox, webkit]
+      tags:
+        description: "Cucumber tag filter (e.g. @smoke)"
+        required: false
+        default: ""
+
+env:
+  BROWSER: ${{ github.event.inputs.browser || 'chromium' }}
+  HEADLESS: "true"
+  TAGS: ${{ github.event.inputs.tags || '' }}
+  PARALLEL: "2"
+  RETRY: "1"
+  SCREENSHOT_ON_FAILURE: "true"
+  TRACE: "false"
+  APP_USERNAME: ${{ secrets.APP_USERNAME }}
+  APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+  # LOGIN_URL: ${{ secrets.LOGIN_URL || 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login' }}
+  BASIC_CONTROLS_URL: ${{ secrets.BASIC_CONTROLS_URL || 'https://www.hyrtutorials.com/p/basic-controls.html' }}
+
+jobs:
+  test:
+    name: Run Tests (${{ github.event.inputs.browser || 'chromium' }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: playwright-bdd-framework/package-lock.json
+
+      - name: Setup Java (for Allure CLI)
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Install dependencies
+        working-directory: playwright-bdd-framework
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: playwright-bdd-framework
+        run: npx playwright install --with-deps ${{ env.BROWSER }}
+
+      - name: Check step definitions
+        working-directory: playwright-bdd-framework
+        run: npm run steps:check
+
+      - name: Run tests
+        working-directory: playwright-bdd-framework
+        run: npm run test:report:no-open
+        continue-on-error: true
+
+      - name: Print retry summary
+        if: always()
+        working-directory: playwright-bdd-framework
+        run: npm run test:retry-report
+        continue-on-error: true
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ github.run_number }}
+          path: playwright-bdd-framework/allure-results/
+          retention-days: 14
+
+      - name: Upload Allure HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ github.run_number }}
+          path: playwright-bdd-framework/allure-report/
+          retention-days: 14
+
+      - name: Upload screenshots and traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifacts-${{ github.run_number }}
+          path: |
+            playwright-bdd-framework/test-results/
+          retention-days: 7
+          if-no-files-found: ignore

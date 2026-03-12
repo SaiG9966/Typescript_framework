@@ -1,0 +1,92 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "orangehrm-login;login-with-valid-credentials-and-verify-dashboard",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Login with valid credentials and verify dashboard",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 487677899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user launches OrangeHRM login page",
+            "match": {
+              "location": "src\\tests\\stepDefinitions\\loginSteps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8845349000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user enters valid username and password",
+            "match": {
+              "location": "src\\tests\\stepDefinitions\\loginSteps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3051946700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "user clicks login button",
+            "match": {
+              "location": "src\\tests\\stepDefinitions\\loginSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3047235999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "user should navigate to dashboard page",
+            "match": {
+              "location": "src\\tests\\stepDefinitions\\loginSteps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 325815900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 259837500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "orangehrm-login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "OrangeHRM Login",
+    "tags": [],
+    "uri": "src\\tests\\features\\login.feature"
+  }
+]

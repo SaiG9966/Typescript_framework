@@ -1,0 +1,8 @@
+{
+  "cucumberautocomplete.steps": [
+    "playwright-bdd-framework/src/tests/stepDefinitions/**/*.ts"
+  ],
+  "cucumberautocomplete.syncfeatures": "playwright-bdd-framework/src/tests/features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.smartSnippets": true
+}
