@@ -1,8 +1,85 @@
-# Playwright + Cucumber BDD Framework
+# Playwright + Cucumber BDD Framework (Fresh Template)
 
-A production-ready, TypeScript-based test automation framework built with **Playwright** for browser control and **Cucumber** for BDD-style test scenarios. Designed to be portable, configurable without code changes, and easy to onboard for any team.
+Clean starter framework using Playwright + Cucumber + TypeScript.
+
+This repo is prepared as a fresh baseline:
+- No hardcoded URLs
+- No hardcoded credentials
+- No active test scenarios
+- Placeholder feature/step files only
 
 ---
+
+## Quick Start
+
+1. Install dependencies
+
+```bash
+npm install
+npx playwright install
+```
+
+2. Create local env file
+
+```bash
+# PowerShell
+Copy-Item .env.example .env
+```
+
+3. Run validation
+
+```bash
+npm run lint
+npx tsc -p tsconfig.json
+npm run bdd
+```
+
+---
+
+## Important Commands
+
+```bash
+npm run bdd
+npm run test
+npm run steps:check
+npm run report:generate
+npm run report:open
+```
+
+---
+
+## Environment
+
+Set values in `.env` only (keep `.env.example` generic):
+
+- `BASE_URL`, `LOGIN_URL`, `BASIC_CONTROLS_URL`, `NOP_COMMERCE_URL`
+- `APP_USERNAME`, `APP_PASSWORD`
+- `BROWSER`, `HEADLESS`, `PARALLEL`, `RETRY`, `TAGS`
+
+---
+
+## Add Your First Test
+
+1. Add scenario to `src/tests/features/`
+2. Add matching steps in `src/tests/stepDefinitions/`
+3. Add page object in `src/pages/`
+4. Run `npm run steps:check` and `npm run bdd`
+
+---
+
+## Template Checklist
+
+- Keep no real URLs/credentials in committed files
+- Keep feature files as placeholders until needed
+- Ensure lint + typecheck + bdd pass
+
+---
+
+For a user quick guide, see [README.users.md](README.users.md).
+
+---
+
+## Full Detailed Documentation
 
 ## Table of Contents
 

@@ -11,5 +11,6 @@ console.log("\n======================================");
 console.log(" Test Execution Completed");
 console.log(" Allure Report Location:");
 console.log(reportPath);
+console.log("");
 console.log("Framework by Thirumandas Saiteja Goud")
 console.log("======================================\n");
