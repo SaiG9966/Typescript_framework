@@ -34,8 +34,7 @@
     "lint:fix": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"src/**/*.js\"",
-    "bdd": "cucumber-js --config src/config/cucumber.cjs",
-    "test": "npm run bdd"
+    "bdd": "cucumber-js --config src/config/cucumber.cjs"
   },
   "keywords": [],
   "author": "",

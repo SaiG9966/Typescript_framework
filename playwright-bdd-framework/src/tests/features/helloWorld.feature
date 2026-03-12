@@ -1,6 +1,5 @@
-Feature: Hello World
+@template
+Feature: Framework placeholder
 
-  Scenario: Display Hello World
-    Given I have a Cucumber setup
-    When I run the test
-    Then I should see "Hello World" in the output
+  # Fresh template only.
+  # Add your own scenarios in this folder.
