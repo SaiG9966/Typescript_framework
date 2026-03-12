@@ -1103,6 +1103,8 @@ npm run format:check   # check formatting without writing (useful in CI)
 
 **Trigger options:**
 
+
+
 ```yaml
 on:
   push:

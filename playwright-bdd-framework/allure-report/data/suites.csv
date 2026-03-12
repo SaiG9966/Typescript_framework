@@ -1,27 +1,27 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"As a user
-  I want to fill the registration form
-  So that I can submit my details successfully","9407","Enter Password","","2026-03-11","passed","2026-03-11","","","",""
+"","38876","Login with valid credentials and verify dashboard","","2026-03-11","broken","2026-03-11","","","",""
 "As a user
   I want to fill the registration form
   So that I can submit my details successfully","5015","Enter Last Name","","2026-03-11","broken","2026-03-11","","","",""
 "As a user
   I want to fill the registration form
-  So that I can submit my details successfully","38439","FillCustomerDetails Registration Form","","2026-03-11","broken","2026-03-11","","","",""
-"As a user
-  I want to fill the registration form
-  So that I can submit my details successfully","3923","Select Gender","","2026-03-11","broken","2026-03-11","","","",""
+  So that I can submit my details successfully","9407","Enter Password","","2026-03-11","passed","2026-03-11","","","",""
 "As a user
   I want to fill the registration form
   So that I can submit my details successfully","3350","Select Languages Known","","2026-03-11","broken","2026-03-11","","","",""
+"","10705","Login with valid credentials and verify dashboard","","2026-03-11","passed","2026-03-11","","","",""
 "As a user
   I want to fill the registration form
-  So that I can submit my details successfully","11944","Fill Complete Registration Form","","2026-03-11","passed","2026-03-11","","","",""
-"","10705","Login with valid credentials and verify dashboard","","2026-03-11","passed","2026-03-11","","","",""
+  So that I can submit my details successfully","38439","FillCustomerDetails Registration Form","","2026-03-11","broken","2026-03-11","","","",""
 "As a user
   I want to fill the registration form
   So that I can submit my details successfully","5507","Enter Email Address","","2026-03-11","broken","2026-03-11","","","",""
 "As a user
   I want to fill the registration form
+  So that I can submit my details successfully","11944","Fill Complete Registration Form","","2026-03-11","passed","2026-03-11","","","",""
+"As a user
+  I want to fill the registration form
   So that I can submit my details successfully","6777","Enter First Name","","2026-03-11","broken","2026-03-11","","","",""
-"","38876","Login with valid credentials and verify dashboard","","2026-03-11","broken","2026-03-11","","","",""
+"As a user
+  I want to fill the registration form
+  So that I can submit my details successfully","3923","Select Gender","","2026-03-11","broken","2026-03-11","","","",""
